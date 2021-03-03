@@ -23,7 +23,7 @@ def create_app():
     
     app = Flask(__name__)
     app.config.from_object("default_settings.app_config")
-    app.config['SECRET_KEY'] = "Dreamdojo1"
+    app.config['SECRET_KEY'] = "dreamdojo1"
 
     db.init_app(app)
     ma.init_app(app)

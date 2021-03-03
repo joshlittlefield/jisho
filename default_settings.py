@@ -2,7 +2,7 @@ import os
 
 class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    JWT_SECRET_KEY = "Dreamdojo1"
+    JWT_SECRET_KEY = "dreamdojo1"
 
     MAX_CONTENT_LENGTH = 1 * 1024 * 1024
 
