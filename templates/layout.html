@@ -19,14 +19,14 @@
 <body>
     <header class="site-header">
       <div class="jumbotron text-center">
-        <h1>Otaku Jisho</h1>
+        <h1>Otaku Jisho - オタク辞書</h1>
         <p>Helping Geeks and Nerds learn Japanese</p>
       </div>
 
       
       <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container">
-          <a class="navbar-brand mr-4" href="/">SBox</a>
+          <a class="navbar-brand mr-4" href="/">Otaku Jisho</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -37,8 +37,12 @@
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
               {% if current_user.is_authenticated %}
+                <a class="nav-item nav-link" href="{{ url_for('suggestions.new_suggestion') }}">Levels</a>
+                <a class="nav-item nav-link" href="{{ url_for('auth.account') }}">Radicals</a>
+                <a class="nav-item nav-link" href="{{ url_for('auth.logout') }}">Kanji</a>
                 <a class="nav-item nav-link" href="{{ url_for('suggestions.new_suggestion') }}">New Suggestion</a>
                 <a class="nav-item nav-link" href="{{ url_for('auth.account') }}">Account</a>
+                <a class="nav-item nav-link" href="{{ url_for('auth.logout') }}">Help</a>
                 <a class="nav-item nav-link" href="{{ url_for('auth.logout') }}">Logout</a>
               {% else %}
                 <a class="nav-item nav-link" href="{{ url_for('auth.login') }}">About Us</a>
