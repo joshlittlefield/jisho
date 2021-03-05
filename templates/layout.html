@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
 
     {% if title %}
-        <title>Nutflix Suggestion Box - {{ title }}</title>
+        <title>Otaku Jisho - {{ title }}</title>
     {% else %}
         <title>SBox</title>
     {% endif %}
@@ -19,8 +19,8 @@
 <body>
     <header class="site-header">
       <div class="jumbotron text-center">
-        <h1>Nutflix Suggestion Box</h1>
-        <p>If we dont have it, leave a suggestion so we can try and get it!</p>
+        <h1>Otaku Jisho</h1>
+        <p>Helping Geeks and Nerds learn Japanese</p>
       </div>
 
       
@@ -41,8 +41,10 @@
                 <a class="nav-item nav-link" href="{{ url_for('auth.account') }}">Account</a>
                 <a class="nav-item nav-link" href="{{ url_for('auth.logout') }}">Logout</a>
               {% else %}
-                <a class="nav-item nav-link" href="{{ url_for('auth.login') }}">Login</a>
-                <a class="nav-item nav-link" href="{{ url_for('auth.register') }}">Register</a>
+                <a class="nav-item nav-link" href="{{ url_for('auth.login') }}">About Us</a>
+                <a class="nav-item nav-link" href="{{ url_for('auth.register') }}">How it Works</a>
+                <a class="nav-item nav-link" href="{{ url_for('auth.login') }}">Sign In</a>
+                <a class="nav-item nav-link" href="{{ url_for('auth.register') }}">Join US</a>
               {% endif %}
             </div>
           </div>
