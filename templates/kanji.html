@@ -1,23 +1,21 @@
 {% extends "layout.html" %}
 {% block content %}
       
-  <article class="media content-section">
-    
-    <div class="media-body">
+ 
+   <div class="container">
+     <div class="row">    
       {% for kanji in kanjis %}
-      <h2 class="article-title">Kanji - {{ kanji.character }}</h2>
-      <p class="article-content">Kanji # {{ kanji.kanji_id }}</p>
       
       <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">Kanji # {{ kanji.kanji_id }}</div>
+          <div class="panel-body">Kanji - {{ kanji.character }}<img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+          
+        </div>
+      </div>
+      {% endfor %}
       </div>
     </div>
-      {% endfor %}
-    </div>
-  </article>
   
   
   <div class="container">    
