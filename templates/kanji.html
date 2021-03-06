@@ -4,16 +4,19 @@
  
    <div class="container">
      <div class="row">    
-      {% for kanji in kanjis %}
-      
-      <div class="col-sm-4">
-        <div class="panel panel-primary">
-          <div class="panel-heading">Kanji # {{ kanji.kanji_id }}</div>
-          <div class="panel-body">Kanji - {{ kanji.character }}<img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-          
+     
+     {% if {{ kanji.kanji_id }} <= 10 -%}
+        {% for kanji in kanjis %}
+        
+        <div class="col-sm-4">
+          <div class="panel panel-primary">
+            <div class="panel-heading">Kanji # {{ kanji.kanji_id }}</div>
+            <div class="panel-body">Kanji - {{ kanji.character }}<img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+            
+          </div>
         </div>
-      </div>
-      {% endfor %}
+        {% endfor %}
+      {% endif %}
       </div>
     </div>
   
