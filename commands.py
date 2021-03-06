@@ -20,11 +20,12 @@ def seed_db():
     
     from models.Suggestion import Suggestion
     from models.User import User
+    from models.Kanji import Kanji
     from main import bcrypt
     from faker import Faker
     import random
 
-    faker = Faker()
+    faker = Faker(['en_US','ja_JP'])
     users = []
 
     for i in range(5):
@@ -48,4 +49,18 @@ def seed_db():
         db.session.add(suggestion)
 
     db.session.commit()
+    
+    for i in range(20):    
+        kanji=Kanji()
+        kanji.id = f"{i}"
+        kanji.character = faker.word()
+        kanji.meaning = faker.word()
+        kanji.onyomi = faker.word()
+        kanji.kunyomi = faker.word()
+
+    db.session.commit()
+    
+    
+    
+    
     print("Tables seeded")

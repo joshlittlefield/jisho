@@ -22,8 +22,7 @@ class Kanji(db.Model):
     R4_radical_used=db.Column(db.String(200))
     R5_radical_used=db.Column(db.String(200))
     story=db.Column(db.String(200))
-    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     
     
     def __repr__(self):
-        return f"<Kanji ( '{self.character}', '{self.meaning}'>" 
+        return f"<Kanji ( '{self.character}', '{self.meaning}', '{self.onyomi}', '{self.kunyomi}'>" 
