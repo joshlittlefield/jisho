@@ -18,7 +18,7 @@ kanjis = Blueprint('kanjis', __name__)
 def all_kanji():
     # Retrieve all suggestions
     kanji = Kanji.query.options(joinedload("user")).all()
-    return render_template("kanji.html", kanjis=kanjis)
+    return render_template("kanji.html", kanji=kanji)
     
 
 
