@@ -66,14 +66,14 @@
         </div>
         <div class="col-md-4">
           <div class="content-section">
-            <h3>SBox Sidebar</h3>
-            <p class='text-muted'>Latest Video Suggestions.
-              {% for suggestion in suggestions %}
+            <h3>Kanji Sidebar</h3>
+            <p class='text-muted'>Latest Kanji.
+              {% for kanji in kanjis %}
     
                 <article class="media content-section">
                   <div class="media-body">
                     
-                    <h2><a class="article-title" href="#">{{ suggestion.title }}</a></h2>
+                    <h2><a class="article-title" href="#">{{ kanjis.character }}</a></h2>
                     
                   </div>
                 </article>
