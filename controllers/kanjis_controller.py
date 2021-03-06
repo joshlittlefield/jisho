@@ -17,6 +17,6 @@ kanjis = Blueprint('kanjis', __name__)
 @login_required
 def kanji():
     # Retrieve all suggestions
-    kanjis = Kanji.query.options.get_or_404(kanji_id)
+    kanjis = Kanji.query.get_or_404(kanji_id)
     return render_template("kanji.html", kanjis=kanjis)
     
