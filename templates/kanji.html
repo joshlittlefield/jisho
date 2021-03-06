@@ -4,9 +4,10 @@
   <article class="media content-section">
     
     <div class="media-body">
-      
-      <h2 class="article-title">Kanji # {{ kanjis.kanji_id }}</h2>
-      <p class="article-content">Kanji - {{ kanjis.character }}</p>
+      {% for kanji in kanjis %}
+      <h2 class="article-title">Kanji - {{ kanjis.character }}</h2>
+      <p class="article-content">Kanji # {{ kanjis.kanji_id }}</p>
+      {% endfor %}
     </div>
   </article>
     
