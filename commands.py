@@ -27,6 +27,8 @@ def seed_db():
 
     faker = Faker(['en_US','ja_JP'])
     users = []
+    suggestions = []
+    kanjis = []
 
     for i in range(5):
         user = User()
@@ -39,7 +41,7 @@ def seed_db():
 
     db.session.commit()
 
-    for i in range(20):    
+    for j in range(20):    
         suggestion=Suggestion()
         suggestion.title = faker.catch_phrase()
         suggestion.user_id = random.choice(users).id
@@ -47,16 +49,19 @@ def seed_db():
         suggestion.content = faker.name()
         suggestion.date_created = faker.date_time_this_year(before_now=True, after_now=False, tzinfo=None)
         db.session.add(suggestion)
+        suggestions.append(suggestion)
 
     db.session.commit()
     
-    for i in range(20):    
+    for k in range(20):    
         kanji=Kanji()
-        kanji.id = f"{i}"
+        kanji.kanji_id = f"{k}"
         kanji.character = faker.word()
         kanji.meaning = faker.word()
         kanji.onyomi = faker.word()
         kanji.kunyomi = faker.word()
+        db.session.add(kanji)
+        kanjis.append(kanji)
 
     db.session.commit()
     
