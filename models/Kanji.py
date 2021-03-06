@@ -7,7 +7,7 @@ from datetime import datetime
 class Kanji(db.Model):
     __tablename__ = "kanjis"
     
-    id = db.Column(db.Integer, primary_key=True)
+    kanji_id = db.Column(db.Integer, primary_key=True)
     heisig_level=db.Column(db.Integer)
     jlpt_level=db.Column(db.Integer)
     school_level=db.Column(db.Integer)
@@ -25,4 +25,4 @@ class Kanji(db.Model):
     
     
     def __repr__(self):
-        return f"<Kanji ( '{self.character}', '{self.meaning}', '{self.onyomi}', '{self.kunyomi}'>" 
+        return f"<Kanji ( '{self.kanji_id}', '{self.character}', '{self.meaning}', '{self.onyomi}', '{self.kunyomi}'>" 
