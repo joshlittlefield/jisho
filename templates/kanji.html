@@ -5,9 +5,9 @@
    <div class="container">
      <div class="row">    
      
-     {% if {{ kanji.kanji_id }} <= 10 -%}
+     
         {% for kanji in kanjis %}
-        
+        {% if  kanji.kanji_id<= 10 -%}
         <div class="col-sm-4">
           <div class="panel panel-primary">
             <div class="panel-heading">Kanji # {{ kanji.kanji_id }}</div>
@@ -15,8 +15,9 @@
             
           </div>
         </div>
+         {% endif %}
         {% endfor %}
-      {% endif %}
+     
       </div>
     </div>
   
