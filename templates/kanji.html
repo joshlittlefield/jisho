@@ -2,18 +2,9 @@
 {% block content %}
       
   <article class="media content-section">
-    <img class="rounded-circle article-img" src="{{ url_for('static', filename='images/' + suggestion.user.image_file) }}">
+    
     <div class="media-body">
-      <div class="article-metadata">
-        User ID - <a class="mr-2" href="#">{{ suggestion.user.username }}</a>
-        <small class="text-muted">Date Created <{{ suggestion.date_created.strftime('%Y-%m-%d') }}</small>
-        {% if suggestion.user == current_user %}
-          <div>
-            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('suggestions.update_suggestion', suggestion_id=suggestion.id) }}">Update</a>
-            <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
-          </div>
-        {% endif %}
-      </div>
+      
       <h2 class="article-title">{{ kanji.kanji_id }}</h2>
       <p class="article-content">{{ kanji.character }}</p>
     </div>
