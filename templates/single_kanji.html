@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+  <article class="media content-section">
+    <img class="rounded-circle article-img" src="{{ url_for('static', filename='images/' + suggestion.user.image_file) }}">
+    <div class="media-body">
+      <div class="article-metadata">
+        Kanji # - <a class="mr-2" href="#">{{ kanji.kanji_id }}</a>
+        <small class="text-muted">Heisig Level - <{{ kanji.heisig_level }}</small>
+       
+      </div>
+      <h2 class="article-title">{{ kanji.meaning }}</h2>
+      <p class="article-content">{{ kanji.character }}</p>
+    </div>
+  </article>
+  
+{% endblock content %}

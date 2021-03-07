@@ -32,8 +32,7 @@ def new_suggestion():
         db.session.commit()
         flash('Your Suggestion has been created!', 'success')
         return redirect(url_for('suggestions.home'))
-    return render_template('create_suggestion.html', title='New Suggestion',
-                           form=form, legend='New Suggestion')
+    return render_template('create_suggestion.html', title='New Suggestion', form=form, legend='New Suggestion')
 
 
 @suggestions.route("/suggestion/<int:suggestion_id>")

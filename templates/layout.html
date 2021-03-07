@@ -39,7 +39,7 @@
               {% if current_user.is_authenticated %}
                 
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="{{ url_for('kanjis.kanji') }}" id="navbardrop" data-toggle="dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                     Kanji
                   </a>
                   <div class="dropdown-menu">
@@ -49,7 +49,6 @@
                   </div>
                 </li>
                 
-                <a class="nav-item nav-link" href="{{ url_for('kanjis.kanji') }}">Kanji</a>
                 <a class="nav-item nav-link" href="{{ url_for('suggestions.new_suggestion') }}">New Suggestion</a>
                 <a class="nav-item nav-link" href="{{ url_for('auth.account') }}">Account</a>
                 <a class="nav-item nav-link" href="{{ url_for('auth.logout') }}">Logout</a>

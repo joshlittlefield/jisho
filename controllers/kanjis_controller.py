@@ -20,3 +20,10 @@ def kanji():
     kanjis = Kanji.query.all()
     return render_template("kanji.html", kanjis=kanjis)
     
+    
+    
+@kanjis.route("/kanji/<int:kanji_id>")
+def single_kanji(kanji_id):
+    kanjis = Kanji.query.get_or_404(kanji_id)
+    return render_template('single_kanji.html', character=kanji.character, kanjis=kanjis)
+    
