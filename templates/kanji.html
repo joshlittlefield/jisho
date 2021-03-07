@@ -1,44 +1,45 @@
 {% extends "layout.html" %}
 {% block content %}
-      
- 
-   <div class="container">
-       
-       
-       
-      <ul class="list-group list-group-horizontal">
      
-        {% for kanji in kanjis %}
-         <li class="list-group-item">
-        {% if  kanji.kanji_id<= 10 -%}
-        
-          <div class="col-sm-4">
-            <div class="panel panel-primary">
-              <div class="panel-heading">Kanji # {{ kanji.kanji_id }} Heisig Level -{{ kanji.heisig_level }} </div>
-              <div class="panel-body"><h1>{{ kanji.character }}</h1></div>
-              
+          {% for kanji in kanjis %}
+          
+          {% if  kanji.heisig_level == 1 -%}
+          
+          <article class="media content-section">
+          <img class="rounded-circle article-img" src="{{ url_for('static', filename='images/') }}">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ kanji.kanji_id }}</a>
+              <small class="text-muted">{{ kanji.heisig_level }}</small>
             </div>
+            <h2><a class="article-title" href="#">{{ kanji.character }}</a></h2>
+            <p class="article-content">{{ kanji.meaning }}</p>
           </div>
-       
-         {% endif %}
+        </article>
         
         
-        {% if  kanji.kanji_id > 10 -%}
          
-          <div class="col-sm-4">
-            <div class="panel panel-primary">
-              <div class="panel-heading">Kanji # {{ kanji.kanji_id }} Heisig Level -{{ kanji.heisig_level }} </div>
-              <div class="panel-body"><h1>{{ kanji.character }}</h1></div>
-              
+           {% endif %}
+          
+          
+          {% if  kanji.heisig_level == 2 -%}
+           
+            <article class="media content-section">
+          <img class="rounded-circle article-img" src="{{ url_for('static', filename='images/') }}">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ kanji.kanji_id }}</a>
+              <small class="text-muted">{{ kanji.heisig_level }}</small>
             </div>
+            <h2><a class="article-title" href="#">{{ kanji.character }}</a></h2>
+            <p class="article-content">{{ kanji.meaning }}</p>
           </div>
-        
-         {% endif %}
-          </li>
-        {% endfor %}
-     
-      </ul>
-    </div>
+        </article>
+          
+           {% endif %}
+            
+          {% endfor %}
+
     
   
 {% endblock content %}
