@@ -9,6 +9,7 @@ class KanjiSchema(ma.SQLAlchemyAutoSchema):
 
     
     kanji_id = ma.auto_field()
+    heisig_level = ma.auto_field()
     character = ma.String(required=True)
     meaning = ma.String(required=True)
     onyomi = ma.String()

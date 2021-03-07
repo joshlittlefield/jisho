@@ -53,13 +53,33 @@ def seed_db():
 
     db.session.commit()
     
+    count = 1
     for k in range(20):    
         kanji=Kanji()
-        kanji.kanji_id = f"{k}"
-        kanji.character = faker.word()
-        kanji.meaning = faker.word()
-        kanji.onyomi = faker.word()
-        kanji.kunyomi = faker.word()
+        
+        if k < 10:
+            kanji.kanji_id = f"{k+1}"
+            kanji.heisig_level = f"{count}"
+            kanji.character = faker.word()
+            kanji.meaning = faker.word()
+            kanji.onyomi = faker.word()
+            kanji.kunyomi = faker.word()
+        elif k == 10:
+            kanji.kanji_id = f"{k+1}"
+            kanji.heisig_level = f"{count}"
+            kanji.character = faker.word()
+            kanji.meaning = faker.word()
+            kanji.onyomi = faker.word()
+            kanji.kunyomi = faker.word()
+            count += 1
+        else:
+            kanji.kanji_id = f"{k+1}"
+            kanji.heisig_level = f"{count}"
+            kanji.character = faker.word()
+            kanji.meaning = faker.word()
+            kanji.onyomi = faker.word()
+            kanji.kunyomi = faker.word()
+        
         db.session.add(kanji)
         kanjis.append(kanji)
 
