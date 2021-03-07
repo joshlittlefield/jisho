@@ -3,11 +3,12 @@
       
  
    <div class="container">
-     <div class="row">    
+       
      
      
         {% for kanji in kanjis %}
         {% if  kanji.kanji_id<= 10 -%}
+        <div class="row">  
         <div class="col-sm-4">
           <div class="panel panel-primary">
             <div class="panel-heading">Kanji # {{ kanji.kanji_id }} Heisig Level -{{ kanji.heisig_level }} </div>
@@ -15,19 +16,22 @@
             
           </div>
         </div>
+        </div>
          {% endif %}
         {% if  kanji.kanji_id > 10 -%}
-        <div class="col-sm-4">
-          <div class="panel panel-primary">
-            <div class="panel-heading">Kanji # {{ kanji.kanji_id }} Heisig Level -{{ kanji.heisig_level }} </div>
-            <div class="panel-body"><h1>Kanji - {{ kanji.character }}</h1></div>
-            
+        <div class="row">  
+          <div class="col-sm-4">
+            <div class="panel panel-primary">
+              <div class="panel-heading">Kanji # {{ kanji.kanji_id }} Heisig Level -{{ kanji.heisig_level }} </div>
+              <div class="panel-body"><h1>Kanji - {{ kanji.character }}</h1></div>
+              
+            </div>
           </div>
         </div>
          {% endif %}
         {% endfor %}
      
-      </div>
+      
     </div>
     
   
