@@ -23,13 +23,13 @@ def kanji():
     
     
 @kanjis.route("/kanji/<int:kanji_id>")
-def single_kanji(kanji_id):
-    kanjis = Kanji.query.get_or_404(kanji_id)
-    return render_template('single_kanji.html', character=kanji.character, kanjis=kanjis)
+def single_kanji(kanji_id=1):
+    kanji = Kanji.query.get_or_404(kanji_id)
+    return render_template('single_kanji.html', character=kanji.character, kanji=kanji)
     
 
 @kanjis.route("/kanji/<int:heisig_level>")
-def single_heisig_level(heisig_level):
-    kanjis = Kanji.query.get_or_404(heisig_level)
-    return render_template('single_heisig_level.html', level=kanji.heisig_level, kanjis=kanjis)
+def single_heisig_level(heisig_level=1):
+    kanji = Kanji.query.get_or_404(heisig_level)
+    return render_template('single_heisig_level.html', level=kanji.heisig_level, kanji=kanji)
     
