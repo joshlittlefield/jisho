@@ -2,11 +2,11 @@
 {% block content %}
 
 <div class="container">
-  <h2>Button Sizes</h2>
   
-  <button type="button" class="btn btn-primary btn-lg" href="create_jisho.html">New OtakuBB</button>
+  <button type="button" class="btn btn-primary btn-lg" href="{{ url_for('jishos.new_jisho') }}">New OtakuBB</button>
   
 </div>
+</br>
     {% for jisho in jishos %}
         <article class="media content-section">
           <img class="rounded-circle article-img" src="{{ url_for('static', filename='images/') }}">
