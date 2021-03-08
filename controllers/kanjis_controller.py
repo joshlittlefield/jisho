@@ -30,6 +30,7 @@ def single_kanji():
 
 @kanjis.route("/kanji/<int:heisig_level>")
 def single_heisig_level():
+    heisig_level = 1
     kanji = Kanji.query.get_or_404(heisig_level)
     return render_template('single_heisig_level.html', kanji=kanji)
     
