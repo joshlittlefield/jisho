@@ -21,6 +21,15 @@ def home():
     
 
 
+@jishos.route("/otakubb")
+@login_required
+def otakubb():
+    # Retrieve all jishos
+    jishos = Jisho.query.options(joinedload("user")).all()
+    return render_template("otakubb.html", jishos=jishos)
+
+
+
 
 @jishos.route("/jisho/new", methods=['GET', 'POST'])
 @login_required
