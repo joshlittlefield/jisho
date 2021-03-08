@@ -32,5 +32,5 @@ def single_kanji(kanji_id):
 def single_heisig_level(single_heisig_level):
     shl= single_heisig_level
     kanjis = Kanji.query.filter_by(heisig_level=shl).all()
-    return render_template('single_heisig_level.html', kanjis=kanjis)
+    return render_template('single_heisig_level.html', single_heisig_level=single_heisig_level, kanjis=kanjis)
     
