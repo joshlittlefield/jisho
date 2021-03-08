@@ -23,7 +23,7 @@ def kanji():
     
     
 @kanjis.route("/kanji/<int:kanji_id>")
-def single_kanji():
+def single_kanji(kanji_id):
     kanji = Kanji.query.get_or_404(kanji_id)
     return render_template('single_kanji.html', kanji=kanji)
     
