@@ -27,3 +27,9 @@ def single_kanji(kanji_id):
     kanjis = Kanji.query.get_or_404(kanji_id)
     return render_template('single_kanji.html', character=kanji.character, kanjis=kanjis)
     
+
+@kanjis.route("/kanji/<int:heisig_level>")
+def heisig_level(heisig_level):
+    kanjis = Kanji.query.get_or_404(heisig_level)
+    return render_template('heisig_level.html', level=kanji.heisig_level, kanjis=kanjis)
+    
