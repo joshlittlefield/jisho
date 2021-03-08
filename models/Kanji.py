@@ -25,4 +25,4 @@ class Kanji(db.Model):
     
     
     def __repr__(self):
-        return f"<Kanji ( '{self.kanji_id}', '{self.character}', '{self.meaning}', '{self.onyomi}', '{self.kunyomi}'>" 
+        return f"<Kanji ( '{self.kanji_id}','{self.heisig_level}', '{self.character}', '{self.meaning}', '{self.onyomi}', '{self.kunyomi}'>" 
