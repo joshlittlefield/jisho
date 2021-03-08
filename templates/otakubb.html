@@ -1,11 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<div class="container">
-  
-  <button type="button" class="btn btn-primary btn-lg" href="{{ url_for('jishos.new_jisho') }}">New OtakuBB</button>
-  
-</div>
 </br>
     {% for jisho in jishos %}
         <article class="media content-section">
