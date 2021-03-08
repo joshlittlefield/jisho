@@ -18,7 +18,7 @@ def drop_db():
 @db_commands.cli.command("seed")
 def seed_db():
     
-    from models.Suggestion import Suggestion
+    from models.Jisho import Jisho
     from models.User import User
     from models.Kanji import Kanji
     from main import bcrypt
@@ -27,7 +27,7 @@ def seed_db():
 
     faker = Faker(['en_US','ja_JP'])
     users = []
-    suggestions = []
+    jishos = []
     kanjis = []
 
     for i in range(5):
@@ -42,14 +42,14 @@ def seed_db():
     db.session.commit()
 
     for j in range(20):    
-        suggestion=Suggestion()
-        suggestion.title = faker.catch_phrase()
-        suggestion.user_id = random.choice(users).id
-        suggestion.genre = faker.name()
-        suggestion.content = faker.name()
-        suggestion.date_created = faker.date_time_this_year(before_now=True, after_now=False, tzinfo=None)
-        db.session.add(suggestion)
-        suggestions.append(suggestion)
+        jisho=Jisho()
+        jisho.title = faker.catch_phrase()
+        jisho.user_id = random.choice(users).id
+        jisho.genre = faker.name()
+        jisho.content = faker.name()
+        jisho.date_created = faker.date_time_this_year(before_now=True, after_now=False, tzinfo=None)
+        db.session.add(jisho)
+        jishos.append(jisho)
 
     db.session.commit()
     

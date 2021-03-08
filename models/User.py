@@ -15,7 +15,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(120), unique=True, nullable=False)
     image_file = db.Column(db.String,nullable=False, default='netflix_logo.png')
     password = db.Column(db.String(60), nullable=False)
-    suggestions = db.relationship("Suggestion", backref="user", lazy="dynamic")
+    jishos = db.relationship("Jisho", backref="user", lazy="dynamic")
 
     def __repr__(self):
         return f"<User( '{self.username}','{self.email}','{self.image_file}')>"

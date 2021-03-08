@@ -1,15 +1,15 @@
 {% extends "layout.html" %}
 {% block content %}
-    {% for suggestion in suggestions %}
+    {% for jisho in jishos %}
         <article class="media content-section">
           <img class="rounded-circle article-img" src="{{ url_for('static', filename='images/') }}">
           <div class="media-body">
             <div class="article-metadata">
-              <a class="mr-2" href="#">{{ suggestion.id }}</a>
-              <small class="text-muted">{{ suggestion.date_created.strftime('%Y-%m-%d') }}</small>
+              <a class="mr-2" href="#">{{ jisho.id }}</a>
+              <small class="text-muted">{{ jisho.date_created.strftime('%Y-%m-%d') }}</small>
             </div>
-            <h2><a class="article-title" href="{{ url_for('suggestions.suggestion', suggestion_id=suggestion.id) }}">{{ suggestion.title }}</a></h2>
-            <p class="article-content">{{ suggestion.genre }}</p>
+            <h2><a class="article-title" href="{{ url_for('jishos.jisho', jisho_id=jisho.id) }}">{{ jisho.title }}</a></h2>
+            <p class="article-content">{{ jisho.jap_translation }}</p>
           </div>
         </article>
     {% endfor %}

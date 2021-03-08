@@ -1,20 +1,20 @@
 {% extends "layout.html" %}
 {% block content %}
   <article class="media content-section">
-    <img class="rounded-circle article-img" src="{{ url_for('static', filename='images/' + suggestion.user.image_file) }}">
+    <img class="rounded-circle article-img" src="{{ url_for('static', filename='images/' + jisho.user.image_file) }}">
     <div class="media-body">
       <div class="article-metadata">
-        User ID - <a class="mr-2" href="#">{{ suggestion.user.username }}</a>
-        <small class="text-muted">Date Created <{{ suggestion.date_created.strftime('%Y-%m-%d') }}</small>
-        {% if suggestion.user == current_user %}
+        User ID - <a class="mr-2" href="#">{{ jisho.user.username }}</a>
+        <small class="text-muted">Date Created <{{ jisho.date_created.strftime('%Y-%m-%d') }}</small>
+        {% if jisho.user == current_user %}
           <div>
-            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('suggestions.update_suggestion', suggestion_id=suggestion.id) }}">Update</a>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('jishos.update_jisho', jisho_id=jisho.id) }}">Update</a>
             <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
           </div>
         {% endif %}
       </div>
-      <h2 class="article-title">{{ suggestion.title }}</h2>
-      <p class="article-content">{{ suggestion.content }}</p>
+      <h2 class="article-title">{{ jisho.title }}</h2>
+      <p class="article-content">{{ jisho.content }}</p>
     </div>
   </article>
   <!-- Modal -->
@@ -22,14 +22,14 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="deleteModalLabel">Delete Suggestion?</h5>
+          <h5 class="modal-title" id="deleteModalLabel">Delete Jisho?</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <form action="{{ url_for('suggestions.delete_suggestion', suggestion_id=suggestion.id) }}" method="POST">
+          <form action="{{ url_for('jishos.delete_jisho', jisho_id=jisho.id) }}" method="POST">
             <input class="btn btn-danger" type="submit" value="Delete">
           </form>
         </div>
