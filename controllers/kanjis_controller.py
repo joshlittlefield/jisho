@@ -29,8 +29,8 @@ def single_kanji(kanji_id):
     
 
 @kanjis.route("/heisig_level/<int:heisig_level>")
-def single_heisig_level(heisig_level):
-    heisig_level = 1
-    kanjis = Kanji.query.all(heisig_level)
+def single_heisig_level(single_heisig_level):
+    
+    kanjis = Kanji.query.filter_by(heisig_level=single_heisig_level)
     return render_template('single_heisig_level.html', kanjis=kanjis)
     
