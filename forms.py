@@ -51,6 +51,6 @@ class UpdateAccountForm(FlaskForm):
                 
                 
 class PostForm(FlaskForm):
-    title = StringField('Video Title', validators=[DataRequired()])
-    content = TextAreaField('Video Genre', validators=[DataRequired()])
+    title = StringField('BB Title', validators=[DataRequired()])
+    content = TextAreaField('BB Content', validators=[DataRequired()])
     submit = SubmitField('Submit')

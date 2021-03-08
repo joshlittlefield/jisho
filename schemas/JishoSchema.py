@@ -8,10 +8,10 @@ class JishoSchema(ma.SQLAlchemyAutoSchema):
         model = Jisho
 
     jisho_title = ma.String(required=True, validate=Length(min=1))
-    jisho_type = ma.String(required=True, validate=Length(min=1))
+    jisho_content = ma.String(required=True, validate=Length(min=1))
     jap_translation = ma.String(required=True,validate=Length(min=1))
     date_created = ma.DateTime(required=True)
-    user =  ma.Nested(UserSchema)
+    user_id =  ma.Nested(UserSchema)
     
 jisho_schema = JishoSchema()
 jishos_schema = JishoSchema(many=True)

@@ -45,7 +45,7 @@ def seed_db():
         jisho=Jisho()
         jisho.title = faker.catch_phrase()
         jisho.user_id = random.choice(users).id
-        jisho.genre = faker.name()
+        jisho.jap_translation = faker.name()
         jisho.content = faker.name()
         jisho.date_created = faker.date_time_this_year(before_now=True, after_now=False, tzinfo=None)
         db.session.add(jisho)
