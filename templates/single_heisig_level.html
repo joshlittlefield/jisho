@@ -1,25 +1,24 @@
 {% extends "layout.html" %}
 {% block content %}
      
-  
-     
-    {% for kanji in kanjis %}
+  <div class="container-fluid">
+    <div class="row"> 
+      {% for kanji in kanjis %}
+      
     
-  
-      <div class="col-sm-3">
-        <div class="card" style="width: 10rem;">
-          <img class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-body">
-            
-            <a class="mr-2" href="#">{{ kanji.kanji_id }}</a>
-            <small class="text-muted">{{ kanji.heisig_level }}</small
-            <h2><a class="article-title" href="#">{{ kanji.character }}</a></h2>
-            <p class="article-content">{{ kanji.meaning }}</p>
+        <div class="col-sm-3">
+          <div class="card" style="width: 10rem;">
+            <div class="card-body">
+              
+              <a class="mr-2" href="#">{{ kanji.kanji_id }}</a>
+              <small class="text-muted">{{ kanji.heisig_level }}</small
+              <h2><a class="article-title" href="#">{{ kanji.character }}</a></h2>
+              <p class="article-content">{{ kanji.meaning }}</p>
+            </div>
           </div>
         </div>
-      </div>
-    {% endfor %}
-
-  
+      {% endfor %}
+    </div>
+  </div>
   
 {% endblock content %}
