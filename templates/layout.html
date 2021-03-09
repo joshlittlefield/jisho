@@ -11,22 +11,22 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
 
     {% if title %}
-        <title>Nutflix Suggestion Box - {{ title }}</title>
+        <title>Otaku Jisho - {{ title }}</title>
     {% else %}
-        <title>SBox</title>
+        <title>オタク辞書</title>
     {% endif %}
 </head>
 <body>
     <header class="site-header">
       <div class="jumbotron text-center">
-        <h1>Nutflix Suggestion Box</h1>
-        <p>If we dont have it, leave a suggestion so we can try and get it!</p>
+        <h1>Otaku Jisho - オタク辞書 </h1>
+        <p>Learning Japanese</p>
       </div>
 
       
       <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container">
-          <a class="navbar-brand mr-4" href="/">SBox</a>
+          <a class="navbar-brand mr-4" href="/">オタク辞書</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -85,8 +85,8 @@
         </div>
         <div class="col-md-4">
           <div class="content-section">
-            <h3>SBox Sidebar</h3>
-            <p class='text-muted'>Latest Video Suggestions.
+            <h3>Otaku Bulletin Board</h3>
+            <p class='text-muted'>Latest BBs.
               {% for jisho in jishos %}
     
                 <article class="media content-section">
