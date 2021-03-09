@@ -49,6 +49,35 @@
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Vocab
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{{ url_for('kanjis.single_vocab_level', single_heisig_level=1) }}">Level 1</a>
+                    <a class="dropdown-item" href="{{ url_for('kanjis.single_vocab_level', single_heisig_level=2) }}">Level 2</a>
+                    <a class="dropdown-item" href="{{ url_for('kanjis.single_vocab_level', single_heisig_level=3) }}">Level 3</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Grammar
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{{ url_for('kanjis.single_grammar_level', single_heisig_level=1) }}">Level 1</a>
+                    <a class="dropdown-item" href="{{ url_for('kanjis.single_grammar_level', single_heisig_level=2) }}">Level 2</a>
+                    <a class="dropdown-item" href="{{ url_for('kanjis.single_grammar_level', single_heisig_level=3) }}">Level 3</a>
+                  </div>
+                </li><li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Sentences
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{{ url_for('kanjis.single_sentence_level', single_heisig_level=1) }}">Level 1</a>
+                    <a class="dropdown-item" href="{{ url_for('kanjis.single_sentence_level', single_heisig_level=2) }}">Level 2</a>
+                    <a class="dropdown-item" href="{{ url_for('kanjis.single_sentence_level', single_heisig_level=3) }}">Level 3</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                     Otaku BB
                   </a>
                   <div class="dropdown-menu">

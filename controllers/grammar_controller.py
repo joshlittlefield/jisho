@@ -36,18 +36,24 @@ def single_heisig_level(single_heisig_level):
     kanjis = Kanji.query.filter_by(heisig_level=single_heisig_level).all()
     return render_template('single_heisig_level.html', single_heisig_level=single_heisig_level, kanjis=kanjis)
     
-    
-@kanjis.route("/vocab/<int:single_heisig_level>")
+@kanjis.route("/grammar/<int:single_grammar_level>")
 @login_required
-def single_vocab_level(single_heisig_level):
+def single_grammar_level(single_grammar_level):
    
     kanjis = Kanji.query.filter_by(heisig_level=single_heisig_level).all()
-    return render_template('single_vocab_level.html', single_heisig_level=single_heisig_level, kanjis=kanjis)
+    return render_template('single_grammar_level.html', single_grammar_level=single_grammar_level, kanjis=kanjis)
     
-@kanjis.route("/sentence/<int:single_heisig_level>")
+@kanjis.route("/heisig_level/<int:single_heisig_level>")
 @login_required
-def single_sentence_level(single_heisig_level):
+def single_heisig_level(single_heisig_level):
+   
+    kanjis = Kanji.query.filter_by(heisig_level=single_heisig_level).all()
+    return render_template('single_heisig_level.html', single_heisig_level=single_heisig_level, kanjis=kanjis)
+    
+@kanjis.route("/heisig_level/<int:single_heisig_level>")
+@login_required
+def single_heisig_level(single_heisig_level):
     
     kanjis = Kanji.query.filter_by(heisig_level=single_heisig_level).all()
-    return render_template('single_sentence_level.html', single_heisig_level=single_heisig_level, kanjis=kanjis)
+    return render_template('single_heisig_level.html', single_heisig_level=single_heisig_level, kanjis=kanjis)
     
