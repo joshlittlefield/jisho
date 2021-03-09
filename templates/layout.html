@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  {% block head %}
     <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,8 +17,11 @@
   {% else %}
       <title>オタク辞書</title>
   {% endif %}
+  {% endblock %}
 </head>
 <body>
+    {% block content %}
+    
     <header class="site-header">
       <div class="jumbotron text-center">
         <h1>Otaku Jisho - オタク辞書</h1>
@@ -71,44 +75,9 @@
         </div>
       </nav>
     </header>
-    <main role="main" class="container">
-      <div class="row">
-        <div class="col-md-8">
-          {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-              {% for category, message in messages %}
-                <div class="alert alert-{{ category }}">
-                  {{ message }}
-                </div>
-              {% endfor %}
-            {% endif %}
-          {% endwith %}
-          {% block content %}{% endblock %}
-        </div>
-        
-        {% if current_user.is_authenticated %}
-        <div class="col-md-4">
-          <div class="content-section">
-            <h3>Otaku Bulletin Board</h3>
-            <p class='text-muted'>Latest on OtakuBB.
-              {% for kanji in kanjis %}
     
-                <article class="media content-section">
-                  <div class="media-body">
-                    
-                    <h2><a class="article-title" href="#">{{ kanji.character }}</a></h2>
-                    
-                  </div>
-                </article>
-              {% endfor %}
-            </p>
-          </div>
-        </div>
-        {% endif %}
-      </div>
-    </main>
 
-
+{% endblock %}
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
