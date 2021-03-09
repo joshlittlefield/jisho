@@ -80,7 +80,39 @@
         </div>
       </nav>
     </header>
+    <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-8">
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+          {% block content %}{% endblock %}
+        </div>
+        <div class="col-md-4">
+          <div class="content-section">
+            <h3>SBox Sidebar</h3>
+            <p class='text-muted'>Latest Video Suggestions.
+              {% for suggestion in suggestions %}
     
+                <article class="media content-section">
+                  <div class="media-body">
+                    
+                    <h2><a class="article-title" href="#">{{ suggestion.title }}</a></h2>
+                    
+                  </div>
+                </article>
+              {% endfor %}
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
 
 
     <!-- Optional JavaScript -->

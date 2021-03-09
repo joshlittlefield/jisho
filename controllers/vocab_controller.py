@@ -46,5 +46,5 @@ def single_vocab_level(single_heisig_level):
 def single_sentence_level(single_heisig_level):
     
     kanjis = Kanji.query.filter_by(heisig_level=single_heisig_level).all()
-    return render_template('single_sentence_level.html', single_heisig_level=single_heisig_level, kanjis=kanjis)
+    return render_template('single_sentence_level.html', single_heisig_level=single_heisig_level, vocabs=vocabs)
     
