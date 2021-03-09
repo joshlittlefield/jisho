@@ -66,8 +66,7 @@ def update_jisho(jisho_id):
     elif request.method == 'GET':
         form.title.data = jisho.title
         form.content.data = jisho.content
-    return render_template('create_jisho.html', title='Update Jisho',
-                           form=form, legend='Update Jisho')
+    return render_template('create_jisho.html', title='Update Jisho', form=form, legend='Update Jisho')
 
 
 @jishos.route("/jisho/<int:jisho_id>/delete", methods=['POST'])

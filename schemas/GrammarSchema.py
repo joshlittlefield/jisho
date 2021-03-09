@@ -1,20 +1,20 @@
 from main import ma
-from models.Kanji import Kanji
+from models.Grammar import Grammar
 from marshmallow.validate import Length
 from schemas.UserSchema import UserSchema
 
-class KanjiSchema(ma.SQLAlchemyAutoSchema):
+class GrammarSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
-        model = Kanji
+        model = Grammar
 
     
-    kanji_id = ma.auto_field()
-    heisig_level = ma.auto_field()
+    grammar_id = ma.auto_field()
+    grammar_level = ma.auto_field()
     character = ma.String(required=True)
     meaning = ma.String(required=True)
-    onyomi = ma.String()
-    kunyomi = ma.String()
+    sentence = ma.String()
     
     
-kanji_schema = KanjiSchema()
-kanjis_schema = KanjiSchema(many=True)
+    
+grammar_schema = GrammarSchema()
+grammars_schema = GrammarSchema(many=True)
