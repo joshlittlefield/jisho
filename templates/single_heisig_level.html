@@ -1,13 +1,13 @@
 {% extends "layout.html" %}
 {% block content %}
      
-  <div class="row">
+  
      
     {% for kanji in kanjis %}
     
   
-      <div class="col-sm">
-        <div class="card" style="width: 18rem;">
+      <div class="col-sm-3">
+        <div class="card" style="width: 10rem;">
           <img class="card-img-top" src="..." alt="Card image cap">
           <div class="card-body">
             
@@ -20,6 +20,6 @@
       </div>
     {% endfor %}
 
-   </div>
+  
   
 {% endblock content %}
