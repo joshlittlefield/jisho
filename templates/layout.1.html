@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+ 
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ 
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+  
 
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
-
-    {% if title %}
-        <title>Nutflix Suggestion Box - {{ title }}</title>
-    {% else %}
-        <title>SBox</title>
-    {% endif %}
+  {% if title %}
+      <title>Otaku Jisho - {{ title }}</title>
+  {% else %}
+      <title>オタク辞書</title>
+  {% endif %}
+ 
 </head>
 <body>
-    <header class="site-header">
+     <header class="site-header">
       <div class="jumbotron text-center">
-        <h1>Nutflix Suggestion Box</h1>
-        <p>If we dont have it, leave a suggestion so we can try and get it!</p>
+        <h1>Otaku Jisho - オタク辞書</h1>
+        <p>Helping Geeks and Nerds with English and Japanese</p>
       </div>
 
       
       <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container">
-          <a class="navbar-brand mr-4" href="/">SBox</a>
+          <a class="navbar-brand mr-4" href="/">Otaku Jisho</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -37,7 +40,8 @@
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
               {% if current_user.is_authenticated %}
-               <li class="nav-item dropdown">
+                
+                <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                     Kanji
                   </a>
@@ -69,45 +73,13 @@
         </div>
       </nav>
     </header>
-    <main role="main" class="container">
-      <div class="row">
-        <div class="col-md-8">
-          {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-              {% for category, message in messages %}
-                <div class="alert alert-{{ category }}">
-                  {{ message }}
-                </div>
-              {% endfor %}
-            {% endif %}
-          {% endwith %}
-          {% block content %}{% endblock %}
-        </div>
-        <div class="col-md-4">
-          <div class="content-section">
-            <h3>SBox Sidebar</h3>
-            <p class='text-muted'>Latest Video Suggestions.
-              {% for jisho in jishos %}
     
-                <article class="media content-section">
-                  <div class="media-body">
-                    
-                    <h2><a class="article-title" href="#">{{ jisho.title }}</a></h2>
-                    
-                  </div>
-                </article>
-              {% endfor %}
-            </p>
-          </div>
-        </div>
-      </div>
-    </main>
-
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+
 </body>
 </html>
