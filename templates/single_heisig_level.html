@@ -9,17 +9,18 @@
         <div class="col-sm-3">
           <div class="card" style="width: 10rem;">
             <div class="card-body">
-              
-               <div class="card-header　bg-primary" href="#"> <h2>{{ kanji.character }}</h2></div>
+               <div class="card-header" href="#"> <h2>{{ kanji.character }}</h2></div>
+            </div>
+            <div class="card-body">
                 <h4 class="card-title">{{ kanji.meaning }}</h4>
-              </div>
-              <div class="card-footer">
+            </div>
+            <div class="card-footer">
                 <small class="text-muted" href="#">第# {{ kanji.heisig_level }}</small>
                 <small class="text-muted" href="#">字# {{ kanji.kanji_id }}</small>
-              </div>
             </div>
           </div>
         </div>
+        
       {% endfor %}
     </div>
   </div>
