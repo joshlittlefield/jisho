@@ -10,10 +10,9 @@
                   <div class="card-body">
                     <h4 class="card-title">Kanji</h4>
                     <p class="card-text">
-                      Some quick example text to build on the card title
-                      and make up the bulk of the card's content.
+                     Kanji straight from the Heisig books in lesson order, to help practice and learn the over 2200 japanese characters.
                     </p>
-                    <a href="#!" class="btn btn-primary">Go somewhere</a>
+                    <a href="{{ url_for('kanjis.single_heisig_level', single_heisig_level=1)}}" class="btn btn-primary">Kanji</a>
                   </div>
             </div>
       </div>
@@ -23,10 +22,9 @@
           <div class="card-body">
             <h4 class="card-title">Vocab</h4>
             <p class="card-text">
-              Some quick example text to build on the card title
-              and make up the bulk of the card's content.
+              Vocabulary sorted with Heisig levels in mind.
             </p>
-            <a href="#!" class="btn btn-primary">Go somewhere</a>
+            <a href="{{ url_for('kanjis.single_vocab_level', single_heisig_level=1)}}" class="btn btn-primary">Vocab</a>
           </div>
         </div>
         </div>
@@ -35,12 +33,11 @@
             <div class="card">
               <img class="card-img-top" src="/static/images/board.png" alt="Bulletin Board">
                   <div class="card-body">
-                    <h4 class="card-title">Bulletin Board</h4>
+                    <h4 class="card-title">Bulletin Boards</h4>
                     <p class="card-text">
-                      Some quick example text to build on the card title
-                      and make up the bulk of the card's content.
+                      Leave some comments, your favourite sentence or word. You could even help with questions from other otaku.
                     </p>
-                    <a href="#!" class="btn btn-primary">Go somewhere</a>
+                    <a href="{{ url_for('jishos.otakubb')}}" class="btn btn-primary">Bulletin Boards</a>
                   </div>
             </div>
       </div>

@@ -20,7 +20,7 @@ vocabs = Blueprint('vocabs', __name__)
 def vocab():
     # Retrieve all kanji
     vocabs = Vocab.query.all()
-    return render_template("vocab.html", vocabs=vocabs)
+    return render_template("single_vocab_level.html", vocabs=vocabs)
     
     
     
@@ -28,7 +28,7 @@ def vocab():
 @login_required
 def single_vocab(vocab_id):
     vocabs = Vocab.query.get_or_404(vocab_id)
-    return render_template('single_vocab.html', vocabs=vocabs)
+    return render_template('single_vocab_level.html', vocabs=vocabs)
     
 
 @vocabs.route("/vocab/<int:single_heisig_level>")
