@@ -28,6 +28,7 @@
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
               <a class="nav-item nav-link" href="{{ url_for('jishos.home') }}">Home</a>
+              <a class="nav-item nav-link" href="{{ url_for('jishos.about') }}">About</a>
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
@@ -69,7 +70,8 @@
                 <a class="nav-item nav-link" href="{{ url_for('auth.logout') }}">Sign Out</a>
               {% else %}
                 <a class="nav-item nav-link" href="{{ url_for('auth.login') }}">Sign In</a>
-                <a class="nav-item nav-link" href="{{ url_for('auth.register') }}">Join US</a>
+                <a class="nav-item nav-link" href="{{ url_for('auth.register') }}">Join Otaku</a>
+                <a class="nav-item nav-link" href="{{ url_for('jishos.help') }}"> ? </a>
               {% endif %}
             </div>
           </div>

@@ -26,6 +26,18 @@ def dashboard():
     # Retrieve all jishos
     jishos = Jisho.query.options(joinedload("user")).all()
     return render_template("dashboard.html", jishos=jishos)
+    
+@jishos.route("/about")
+def about():
+    # Retrieve all jishos
+    jishos = Jisho.query.options(joinedload("user")).all()
+    return render_template("about.html", jishos=jishos)
+    
+@jishos.route("/help")
+def help():
+    # Retrieve all jishos
+    jishos = Jisho.query.options(joinedload("user")).all()
+    return render_template("help.html", jishos=jishos)
 
 
 @jishos.route("/otakubb")
