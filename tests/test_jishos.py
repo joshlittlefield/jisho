@@ -1,7 +1,7 @@
 import unittest
 from main import create_app, db
 
-class TestBooks(unittest.TestCase):
+class TestJishos(unittest.TestCase):
     @classmethod
     def setUp(cls):
         cls.app = create_app()
@@ -19,8 +19,8 @@ class TestBooks(unittest.TestCase):
         db.drop_all()
         cls.app_context.pop()
 
-    def test_book_index(self):
-        response = self.client.get("/books/")
+    def test_kanji_index(self):
+        response = self.client.get("/kanjis/")
 
         data = response.get_json()
 
