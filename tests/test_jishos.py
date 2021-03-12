@@ -8,16 +8,16 @@ class TestJishos(unittest.TestCase):
         cls.app_context = cls.app.app_context()
         cls.app_context.push()
         cls.client = cls.app.test_client()
-       # db.create_all()
+        db.create_all()
 
         runner = cls.app.test_cli_runner()
         runner.invoke(args=["db", "seed"])
 
     @classmethod
     def tearDown(cls):
-       # db.session.remove()
-       # db.drop_all()
-       # cls.app_context.pop()
+        db.session.remove()
+        db.drop_all()
+        cls.app_context.pop()
 
     def test_kanji_index(self):
         response = self.client.get("/kanjis/")
